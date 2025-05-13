@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musician Promo Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    
+    <h1>
+      <img src="Gallery/gallery3.jpg" alt="Artist Profile" class="profile" style="display:block; margin: 0 auto 10px auto;">
+      Malahat Shahinduran
+    </h1>
+    <div class="scroll-indicator" onclick="scrollToSection()">
+      swap
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+  <section class="about animate-left" id="about">
+    <h2 style="color: #00aa88; text-align: center; font-size: 2rem; padding-left: 20px;">About</h2>
+    <p style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: justify; text-indent: 2em;">
+      Hi! I’m Malahat Shahinduran, and music has been a central part of my life since I was 11 years old. I began my journey in 1990 at a children’s music school in Azerbaijan, where I studied piano. After completing five years of training, I was accepted into a music college, where I specialised in choral conducting and graduated with honours after four years.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: justify; text-indent: 2em;">
+      I later taught music theory, music literature, and choir classes for two years at a children’s music school. In 2022, I was accepted unconditionally into the Music programme at Glasgow Clyde College, where I am currently studying in the HND2 level.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: justify; text-indent: 2em;">
+      I teach piano lessons for beginners up to level 5 students, and I primarily work with children aged 6 to 15. However, I welcome learners of all ages who are passionate about music. My teaching style is student-centred — I believe every student learns differently, so I adapt my lessons to suit their pace, interests, and comfort level.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: justify; text-indent: 2em;">
+      For me, music is more than just a combination of sounds - it is one of the purest ways to express the inner world of a person. I believe everyone carries a melody inside, and as a teacher, my job is to help bring that out. My goal is not only to teach notes but also to inspire a lasting love for music through a joyful and supportive learning process.
+    </p>
+    <p style="max-width: 800px; margin: 20px auto 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: justify; text-indent: 2em;">
+      If you’re ready to start your own musical journey, I would be happy to guide you along the way!
+    </p>
+  </section>
+  <section class="music animate-right" id="music">
+    <h2 style="color: #00aa88; text-align: center; font-size: 2rem; margin-bottom: 20px;">Music</h2>
+    <div class="music-item">
+      <div class="vinyl-player" onclick="toggleAudio(this, 'song1')"></div>
+      <div class="audio-info">
+        <p><strong>Bach Gigue French Suite No.3</strong></p>
+        <div class="progress-container" onclick="seekAudio(event, 'song1')">
+          <div class="progress">
+            <div class="progress-indicator" id="progress-indicator-song1"></div>
+          </div>
+        </div>
+        <div class="timeline">
+          <span id="current-time-song1">0:00</span>
+          <span id="duration-song1">2:10</span>
+        </div>
+      </div>
+      <audio id="song1" class="hidden-audio">
+        <source src="Audio/Bach Gigue French Suite No.3.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="music-item">
+      <div class="vinyl-player" onclick="toggleAudio(this, 'song2')"></div>
+      <div class="audio-info">
+        <p><strong>Schumann 12.Kind im Einschhlummern</strong></p>
+        <div class="progress-container" onclick="seekAudio(event, 'song2')">
+          <div class="progress">
+            <div class="progress-indicator" id="progress-indicator-song2"></div>
+          </div>
+        </div>
+        <div class="timeline">
+          <span id="current-time-song2">0:00</span>
+          <span id="duration-song2">2:20</span>
+        </div>
+      </div>
+      <audio id="song2" class="hidden-audio">
+        <source src="Audio/Schumann 12.Kind im Einschhlummern.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </section>
+  <section class="video animate-left">
+    <h2 style="color: #00aa88; text-align: center; font-size: 2rem; margin-bottom: 20px;">Video</h2>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <video width="100%" controls style="border-radius: 10px;" onerror="this.style.display='none';">
+        <source src="Video/Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 10px; font-size: 1rem;"><strong>"The Sound Of Music" by Richard Rodgers</strong><br>Performed by Malahat and Molly</p>
+    </div>
+  </section>
+  <section class="gallery animate-right">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="Gallery/gallery3.jpg" alt="Gallery image 1" onclick="openPopup(0)">
+      <img src="Gallery/gallery5.jpg" alt="Gallery image 2" onclick="openPopup(1)">
+      <img src="Gallery/gallery1.jpg" alt="Gallery image 3" onclick="openPopup(2)">
+      <img src="Gallery/gallery4.jpg" alt="Gallery image 4" onclick="openPopup(3)">
+      <img src="Gallery/gallery2.jpg" alt="Gallery image 5" onclick="openPopup(4)">
+    </div>
+  </section>
+  <div id="popup" class="popup-overlay">
+    <span class="popup-close" onclick="closePopup(event)">&times;</span>
+    <img id="popup-img" class="popup-image" src="">
+    <button class="popup-arrow popup-prev" onclick="prevImage(event)">&lt;</button>
+    <button class="popup-arrow popup-next" onclick="nextImage(event)">&gt;</button>
+  </div>
+  <section class="news animate-left">
+    <h2 style="color: #00aa88; text-align: center; font-size: 2rem; margin-bottom: 20px;">News & Events</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <img src="Gallery/piano-course.png" alt="Piano Course" class="news-img">
+        <div class="news-content">
+          <h3>23 May 2025</h3>
+          <p>New piano course for beginners starts. Only 4 spots left – register now!</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="Gallery/recital.png" alt="Recital Event" class="news-img">
+        <div class="news-content">
+          <h3>30 May 2025</h3>
+          <p>Write your own piano piece and share it! Selected students may perform their original works in a live event.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="Gallery/workshop.png" alt="Workshop" class="news-img">
+        <div class="news-content">
+          <h3>15 June 2025</h3>
+          <p>Registration opens for the Summer Music Workshop – open to all ages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="background-color: #1e1e1e; text-align: center; padding: 30px 20px; color: #ccc; font-size: 0.9rem;">
+    <div>
+      <a href="https://www.instagram.com/malahatshahinduran?igsh=OXJrMm5sOGY4YmQ5" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1b1bRsVbry/?mibextid=wwXIfr" target="_blank" class="social-icon">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+    <div style="margin-top: 10px;">
+      &copy; 2025 Malahat Shahinduran. All rights reserved.
+    </div>
+  </footer>
+  <button onclick="scrollToTop()" style="position: fixed; bottom: 30px; right: 30px; background-color: #aeca40; color: #141414; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js">
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.about, .music, .video, .gallery').forEach((section, i) => {
+      section.classList.add(i % 2 === 0 ? 'fade-in-left' : 'fade-in-right');
+      observer.observe(section);
+    });
+  </script>
+  <script>
+    window.onload = function () {
+      const audio1 = document.getElementById('song1');
+      const audio2 = document.getElementById('song2');
+      if (audio1) setupAudio('song1');
+      if (audio2) setupAudio('song2');
+    };
+    function scrollToSection() {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    function toggleAudio(el, id) {
+      const audio = document.getElementById(id);
+      const vinyl = el;
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play();
+        vinyl.classList.add('spin');
+      } else {
+        audio.pause();
+        vinyl.classList.remove('spin');
+      }
+    }
+    function seekAudio(e, id) {
+      const container = e.currentTarget;
+      const audio = document.getElementById(id);
+      if (!audio || !isFinite(audio.duration)) return;
+      const percent = (e.offsetX / container.offsetWidth);
+      audio.currentTime = percent * audio.duration;
+    }
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' + secs : secs}`;
+    }
+    function setupAudio(id) {
+      const audio = document.getElementById(id);
+      const progressIndicator = document.getElementById(`progress-indicator-${id}`);
+      const currentTimeEl = document.getElementById(`current-time-${id}`);
+      const durationEl = document.getElementById(`duration-${id}`);
+      if (!audio || !progressIndicator || !currentTimeEl || !durationEl) return;
+      audio.addEventListener('loadedmetadata', () => {
+        if (isFinite(audio.duration)) {
+          durationEl.textContent = formatTime(audio.duration);
+        }
+      });
+      audio.addEventListener('timeupdate', () => {
+        if (!isFinite(audio.duration)) return;
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressIndicator.style.left = percent + '%';
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+      });
+      audio.addEventListener('ended', () => {
+        const vinyls = document.getElementsByClassName('vinyl-player');
+        for (let v of vinyls) {
+          v.classList.remove('spin');
+        }
+      });
+    }
+  </script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.animate-left, .animate-right').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <script>
+    const galleryImages = [
+      "Gallery/gallery3.jpg",
+      "Gallery/gallery5.jpg",
+      "Gallery/gallery1.jpg",
+      "Gallery/gallery4.jpg",
+      "Gallery/gallery2.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openPopup(index) {
+      currentIndex = index;
+      const popup = document.getElementById("popup");
+      const popupImg = document.getElementById("popup-img");
+      popupImg.src = galleryImages[index];
+      popup.style.display = "flex";
+    }
+
+    function closePopup(event) {
+      event.stopPropagation();
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function prevImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById("popup-img").src = galleryImages[currentIndex];
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      document.getElementById("popup-img").src = galleryImages[currentIndex];
+    }
+  </script>
+</body>
+</html>
